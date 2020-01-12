@@ -18,3 +18,8 @@ export const getFailure = (error) => ({
   type: types.GET_FAILURE,
   payload: error
 })
+
+export const change = (data) => ({
+  type: types.CHANGE,
+  payload: data
+})

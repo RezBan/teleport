@@ -22,6 +22,20 @@ export default (state = {}, action) => {
       }
     }
 
+    case types.CHANGE: {
+      return {
+        ...state,
+        name: action.payload.city,
+        _links: {
+          ...state._links,
+          "city:country": {
+            ...state._links["city:country"],
+            name: action.payload.country
+          }
+        }
+      }
+    }
+
     default:
       return state
   }
